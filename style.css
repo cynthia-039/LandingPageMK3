@@ -1,0 +1,609 @@
+/* General Styles */
+:root {
+    --primary-color: #2e55a7;
+    --secondary-color: #f0f4f8;
+    --accent-color: #4b7bec;
+    --text-color: #333;
+    --light-text: #999;
+    --white-bg: #fff;
+    --card-bg: #f5f8fc;
+    --border-color: #e0e6ed;
+    --progress-bg: #e2e8f0;
+    --progress-bar: #4299e1;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+ul {
+    list-style: none;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Layout */
+.main-container {
+    display: flex;
+    flex-grow: 1;
+}
+
+.left-sidebar {
+    width: 280px;
+    background-color: var(--white-bg);
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.right-sidebar {
+    width: 320px; /* Lebar diperbesar */
+    background-color: var(--white-bg);
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0 40px;
+    overflow-y: auto;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    background-color: var(--secondary-color);
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 20px;
+}
+
+/* Header Styles */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 10px 15px;
+    width: 500px;
+}
+.search-bar i {
+    font-size: 16px;
+    color: var(--light-text);
+    margin-right: 10px;
+}
+.search-bar input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+}
+
+.header-actions .btn {
+    margin-left: 10px;
+}
+.btn-login {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--primary-color);
+}
+.btn-signup {
+    background-color: var(--primary-color);
+    color: var(--white-bg);
+}
+
+/* Left Sidebar Styles */
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.logo img {
+    width: 100%;
+    height: auto;
+}
+
+.main-menu, .settings-menu {
+    margin-bottom: 30px;
+}
+.main-menu .menu-heading, .settings-menu .menu-heading {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--light-text);
+    padding-left: 15px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.main-menu ul li, .settings-menu ul li {
+    margin-bottom: 10px;
+}
+.main-menu ul li a, .settings-menu ul li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.main-menu ul li a i, .settings-menu ul li a i {
+    font-size: 16px;
+    width: 25px;
+    margin-right: 15px;
+    color: var(--light-text);
+    transition: color 0.3s;
+}
+.main-menu ul li a:hover, .main-menu ul li.active a {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: 500;
+}
+.main-menu ul li a:hover i, .main-menu ul li.active a i {
+    color: var(--primary-color);
+}
+
+
+/* Right Sidebar Styles */
+.section-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.section-title .see-all {
+    font-size: 12px;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.streak-chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 150px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+.chart-bar {
+    width: 20px;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    transition: height 0.3s ease;
+}
+.chart-bar span {
+    position: absolute;
+    top: -20px;
+    font-size: 12px;
+    color: var(--text-color);
+}
+.chart-labels {
+    display: flex;
+    justify-content: space-around;
+    font-size: 12px;
+    color: var(--light-text);
+    margin-bottom: 30px;
+}
+
+.progress-learning-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.progress-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+}
+
+.progress-title {
+    font-weight: 500;
+    flex-grow: 1;
+    white-space: nowrap; /* Mencegah teks melipat ke bawah */
+    overflow: hidden; /* Menyembunyikan teks yang meluber */
+    text-overflow: ellipsis; /* Menambahkan '...' pada teks yang terpotong */
+}
+
+.progress-link {
+    color: var(--light-text);
+    font-size: 14px;
+    transition: color 0.3s;
+    margin-left: auto;
+}
+
+.progress-link:hover {
+    color: var(--primary-color);
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 8px;
+    background-color: var(--progress-bg);
+    border-radius: 4px;
+    margin-top: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: #7b42ff;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.progress-percent {
+    font-size: 14px;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+/* Main Content Body */
+.dashboard-body {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+}
+.dashboard-body.active-content {
+    display: flex;
+}
+
+.welcome-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: var(--white-bg);
+    padding: 30px;
+    border-radius: 12px;
+    background-image: url('https://via.placeholder.com/600x200.png?text=Background+Image');
+    background-size: cover;
+    background-position: center;
+}
+.welcome-text h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+.welcome-text p {
+    margin-bottom: 20px;
+}
+.btn-new-courses {
+    background-color: var(--accent-color);
+    color: var(--white-bg);
+}
+.on-fire-card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 12px;
+    width: 250px;
+    text-align: center;
+}
+.on-fire-card h3 {
+    font-size: 18px;
+}
+.btn-start-learning {
+    background-color: var(--primary-color);
+    color: var(--white-bg);
+    width: 100%;
+    margin-top: 15px;
+}
+
+.stats-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.stat-card {
+    background-color: var(--white-bg);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.stat-card i {
+    font-size: 28px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+.stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+.stat-label {
+    font-size: 12px;
+    color: var(--light-text);
+    text-transform: uppercase;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.section-header h3 {
+    font-size: 20px;
+}
+.section-header .see-all {
+    font-size: 14px;
+    color: var(--accent-color);
+}
+
+.card-list {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Course Card (Continue Learning) */
+.course-card {
+    display: flex;
+    background-color: var(--white-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    width: 100%;
+}
+.course-card img {
+    /* PERUBAHAN DI SINI */
+    width: 250px; /* Lebar gambar disesuaikan */
+    height: 180px; /* Tinggi gambar disesuaikan */
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-top-right-radius: 0; /* Menghilangkan radius di kanan atas */
+    border-bottom-right-radius: 0; /* Menghilangkan radius di kanan bawah */
+    object-fit: cover;
+}
+.course-card .course-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.course-card .tag {
+    background-color: #e6eefd;
+    color: #4b7bec;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    align-self: flex-start;
+    margin-bottom: 10px;
+}
+.course-card h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.progress-container {
+    height: 8px;
+    background-color: var(--progress-bg);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.progress-bar {
+    height: 100%;
+    background-color: var(--progress-bar);
+    border-radius: 4px;
+}
+.btn-resume {
+    background-color: var(--primary-color);
+    color: var(--white-bg);
+    margin-top: auto;
+}
+
+/* Small Course Cards (Popular Courses) */
+.popular-courses .card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.course-card-small {
+    background-color: var(--white-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 15px;
+    display: flex;
+    gap: 15px;
+}
+.course-card-small img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.course-card-small .course-info {
+    display: flex;
+    flex-direction: column;
+}
+.course-card-small .tag {
+    background-color: #e6eefd;
+    color: #4b7bec;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    align-self: flex-start;
+}
+.course-card-small h4 {
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.course-card-small p {
+    font-size: 12px;
+    color: var(--light-text);
+}
+
+/* Video Cards */
+.learning-videos .card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+.video-card {
+    background-color: var(--white-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+.video-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+.video-card .video-info {
+    padding: 15px;
+}
+.video-card .tag {
+    background-color: #e6eefd;
+    color: #4b7bec;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+}
+.video-card h4 {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.video-card p {
+    font-size: 14px;
+    color: var(--light-text);
+}
+
+/* Testimonial Cards */
+.testimonials .card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+.testimonial-card {
+    background-color: var(--white-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.testimonial-card p {
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+.testimonial-author img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.testimonial-author .author-name {
+    font-weight: 600;
+}
+.testimonial-author .author-title {
+    font-size: 12px;
+    color: var(--light-text);
+}
+
+/* Footer Styles */
+.main-footer {
+    background-color: var(--white-bg);
+    border-top: 1px solid var(--border-color);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.footer-left img {
+    height: 40px;
+    width: auto;
+}
+
+.footer-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.footer-right-social {
+    display: flex;
+    gap: 15px;
+}
+.footer-right-social a {
+    font-size: 24px;
+    color: var(--light-text);
+    transition: color 0.3s;
+}
+.footer-right-social a:hover {
+    color: var(--primary-color);
+}
+
+.copyright {
+    font-size: 14px;
+    color: var(--light-text);
+}

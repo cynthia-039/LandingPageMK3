@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerStep Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="main-container">
+
+        <aside class="left-sidebar">
+            <div class="logo">
+                <img src="https://via.placeholder.com/150x50.png?text=CareerStep+Logo" alt="CareerStep Logo">
+            </div>
+            <nav class="main-menu">
+                <div class="menu-heading">MAIN MENU</div>
+                <ul>
+                    <li class="active" data-content-id="dashboard-content">
+                        <a href="#"><i class="fa-solid fa-gauge"></i>Dashboard</a>
+                    </li>
+                    <li data-content-id="my-courses-content">
+                        <a href="#"><i class="fa-solid fa-book-open"></i>My Courses</a>
+                    </li>
+                    <li data-content-id="assignments-content">
+                        <a href="#"><i class="fa-solid fa-clipboard-list"></i>Assignments</a>
+                    </li>
+                    <li data-content-id="certificates-content">
+                        <a href="#"><i class="fa-solid fa-certificate"></i>Certificates</a>
+                    </li>
+                    <li data-content-id="community-content">
+                        <a href="#"><i class="fa-solid fa-users"></i>Community</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="settings-menu">
+                <div class="menu-heading">SETTING</div>
+                <ul>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-gear"></i>Settings</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-circle-question"></i>Help Center</a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="header">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-login">Log In</button>
+                    <button class="btn btn-signup">Sign Up</button>
+                </div>
+            </header>
+
+            <div class="dashboard-body active-content" id="dashboard-content">
+                <section class="welcome-section">
+                    <div class="welcome-text">
+                        <h2>Ready to learn something?</h2>
+                        <p>Let's keep your learning journey going.</p>
+                        <button class="btn btn-new-courses">New Courses</button>
+                    </div>
+                    <div class="on-fire-card">
+                        <h3>You're on fire</h3>
+                        <p>Keep your're on fire</p>
+                        <button class="btn btn-start-learning">Start Learning</button>
+                    </div>
+                </section>
+                
+                <section class="stats-section">
+                    <div class="stat-card">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <div class="stat-value">5</div>
+                        <div class="stat-label">COURSES COMPLETED</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fa-solid fa-certificate"></i>
+                        <div class="stat-value">5</div>
+                        <div class="stat-label">CERTIFICATES EARNED</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fa-solid fa-clock"></i>
+                        <div class="stat-value">10</div>
+                        <div class="stat-label">HOURS LEARNED</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fa-solid fa-fire"></i>
+                        <div class="stat-value">15</div>
+                        <div class="stat-label">STREAK (DAYS)</div>
+                    </div>
+                </section>
+
+                <section class="learning-section">
+                    <div class="section-header">
+                        <h3>Continue Learning</h3>
+                        <a href="#" class="see-all">See All</a>
+                    </div>
+                    <div class="card-list">
+                        <div class="course-card">
+                            <img src="uiux.jpg" alt="Course Thumbnail">
+                            <div class="course-info">
+                                <span class="tag">DESIGN</span>
+                                <h4>UI/UX Design Fundamentals</h4>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 70%;"></div>
+                                </div>
+                                <button class="btn btn-resume">Resume Course</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="popular-courses">
+                    <div class="section-header">
+                        <h3>Popular Courses</h3>
+                        <a href="#" class="see-all">See All</a>
+                    </div>
+                    <div class="card-list">
+                        <div class="course-card-small">
+                            <img src="https://via.placeholder.com/100x100.png?text=Course" alt="Course Thumbnail">
+                            <div class="course-info">
+                                <span class="tag">DESIGN</span>
+                                <h4>UI/UX Design Fundamentals</h4>
+                                <p>10 Lessons</p>
+                            </div>
+                        </div>
+                        <div class="course-card-small">
+                            <img src="https://via.placeholder.com/100x100.png?text=Course" alt="Course Thumbnail">
+                            <div class="course-info">
+                                <span class="tag">CODING</span>
+                                <h4>Data Scientist</h4>
+                                <p>5 Lessons</p>
+                            </div>
+                        </div>
+                        <div class="course-card-small">
+                            <img src="https://via.placeholder.com/100x100.png?text=Course" alt="Course Thumbnail">
+                            <div class="course-info">
+                                <span class="tag">MARKETING</span>
+                                <h4>Digital Marketing</h4>
+                                <p>6 Lessons</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="learning-videos">
+                    <div class="section-header">
+                        <h3>Learning Videos</h3>
+                        <a href="#" class="see-all">See All</a>
+                    </div>
+                    <div class="card-list">
+                        <div class="video-card">
+                            <img src="https://via.placeholder.com/300x150.png?text=Video+Thumbnail" alt="Video Thumbnail">
+                            <div class="video-info">
+                                <span class="tag">CODING</span>
+                                <h4>The Complete Python Pro Bootcamp</h4>
+                                <p>Dr. Angela Yu</p>
+                            </div>
+                        </div>
+                        <div class="video-card">
+                            <img src="https://via.placeholder.com/300x150.png?text=Video+Thumbnail" alt="Video Thumbnail">
+                            <div class="video-info">
+                                <span class="tag">CODING</span>
+                                <h4>Complete Data Science, Machine Learning, NLP Bootcamp</h4>
+                                <p>Bambang Dwi</p>
+                            </div>
+                        </div>
+                        <div class="video-card">
+                            <img src="https://via.placeholder.com/300x150.png?text=Video+Thumbnail" alt="Video Thumbnail">
+                            <div class="video-info">
+                                <span class="tag">DESIGN</span>
+                                <h4>Tutorial Design FIGMA</h4>
+                                <p>Dr. Bambang</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="testimonials">
+                    <div class="section-header">
+                        <h3>See what others are achieving through learning</h3>
+                        <a href="#" class="see-all">See All</a>
+                    </div>
+                    <div class="card-list">
+                        <div class="testimonial-card">
+                            <p>"CareerStep was rated the most comprehensive professional certification program for UX/UI."</p>
+                            <div class="testimonial-author">
+                                <img src="https://via.placeholder.com/50" alt="Author Avatar">
+                                <div class="author-info">
+                                    <div class="author-name">Sarah</div>
+                                    <div class="author-title">UI/UX Designer</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <p>"CareerStep was truly a game-changer! The way they combine the two together, tech..."</p>
+                            <div class="testimonial-author">
+                                <img src="https://via.placeholder.com/50" alt="Author Avatar">
+                                <div class="author-info">
+                                    <div class="author-name">Alex</div>
+                                    <div class="author-title">Tech Manager</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <p>"With CareerStep Business Analytics and tech, you have the two together, technology and consultant skills for..."</p>
+                            <div class="testimonial-author">
+                                <img src="https://via.placeholder.com/50" alt="Author Avatar">
+                                <div class="author-info">
+                                    <div class="author-name">John</div>
+                                    <div class="author-title">Financer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="dashboard-body" id="my-courses-content">
+                <h2>My Courses Content</h2>
+                <p>Ini adalah halaman My Courses.</p>
+            </div>
+            <div class="dashboard-body" id="assignments-content">
+                <h2>Assignments Content</h2>
+                <p>Ini adalah halaman Assignments.</p>
+            </div>
+            <div class="dashboard-body" id="certificates-content">
+                <h2>Certificates Content</h2>
+                <p>Ini adalah halaman Certificates.</p>
+            </div>
+            <div class="dashboard-body" id="community-content">
+                <h2>Community Content</h2>
+                <p>Ini adalah halaman Community.</p>
+            </div>
+        </main>
+        
+        <aside class="right-sidebar">
+            <div class="section-title">Streak (Days)</div>
+            <div class="streak-chart">
+                <div class="chart-bar" style="height: 60px;"><span data-value="10">10</span></div>
+                <div class="chart-bar" style="height: 120px;"><span data-value="15">15</span></div>
+                <div class="chart-bar" style="height: 80px;"><span data-value="10">10</span></div>
+                <div class="chart-bar" style="height: 40px;"><span data-value="5">5</span></div>
+                <div class="chart-bar" style="height: 100px;"><span data-value="15">15</span></div>
+                <div class="chart-bar" style="height: 30px;"><span data-value="5">5</span></div>
+                <div class="chart-bar" style="height: 70px;"><span data-value="10">10</span></div>
+            </div>
+            <div class="chart-labels">
+                <span>SU</span>
+                <span>MO</span>
+                <span>TU</span>
+                <span>WE</span>
+                <span>TH</span>
+                <span>FR</span>
+                <span>SA</span>
+            </div>
+
+            <div class="section-title">Progress Learning <a href="#" class="see-all">See All</a></div>
+            <div class="progress-learning-list">
+                <div class="progress-item">
+                    <span class="progress-title">UI/UX Design Fundamentals</span>
+                    <a href="#" class="progress-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill" style="width: 90%;"></div>
+                        <span class="progress-percent">90%</span>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <span class="progress-title">Data Scientist</span>
+                    <a href="#" class="progress-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill" style="width: 50%;"></div>
+                        <span class="progress-percent">50%</span>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <span class="progress-title">Tutorial FIGMA</span>
+                    <a href="#" class="progress-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill" style="width: 50%;"></div>
+                        <span class="progress-percent">50%</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-left">
+            <img src="https://via.placeholder.com/150x50.png?text=CareerStep+Logo" alt="CareerStep Logo">
+        </div>
+        <div class="footer-center">
+            <span class="copyright">©CareerStep</span>
+        </div>
+        <div class="footer-right-social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fas fa-phone"></i></a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
